@@ -284,11 +284,12 @@ async function do1st() {
     getNow();
     clearMsg();
     addMsg(time+"　開始")
-    showReadyLamp(isReady);     // Ready（運転準備）ランプ
-    showRunLamp(isRun);         // 起動ランプ
-    await getEphem();           // 暦を取得する
-    await getConfig();          // 設定を取得する
-    calcTime();                 // 時間を計算する
+    showReadyLamp(isReady);                 // Ready（運転準備）ランプ
+    showRunLamp(isRun);                     // 起動ランプ
+    await getEphem();                       // 暦を取得する
+    await getConfig();                      // 設定を取得する
+    calcTime();                             // 時間を計算する
+    await enpowerLED(false, "アプリ起動");    // LEDをオフにする　最初はオフに決まっているが、ログにも残すため必要
     clearLightMsg();
     await getHumi(isHumiTry);
     await showDairyGraph();

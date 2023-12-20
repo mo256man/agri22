@@ -46,7 +46,6 @@ def index():
     global light_sum, light_cnt
     light_sum = 0                               # 光センサーオフの累計
     light_cnt = 0                               # 光センサー計測回数　sensing_countの回数でリセット
-    db.set_LED(0, "アプリ起動")                   # 起動時は光センサーオフ
     return render_template("index.html")
 
 
