@@ -268,8 +268,8 @@ def getContec():
         is_light_cnt = request.form["isLightCnt"]
         if is_light_cnt == "true":
             light_cnt = light_cnt % sensing_count + 1       # カウント数で割った余り + 1
-            if light_cnt == 0:
-                light_log = ""
+            if light_cnt == 1:                              # 1になったら つまり+1する前に割り切れたら
+                light_log = ""                              # リセットする
                 light_sum = 0
         inputs = []                                         # コンテックの戻り値の初期値
         if is_try=="true":                                  # トライならば

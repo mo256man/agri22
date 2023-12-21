@@ -725,8 +725,6 @@ async function enpowerLED(bool, comment) {
             if (isRun) {                                // 自動運転中ならば
                 const dict = JSON.parse(data);
                 const imgB64 = dict["imgB64"];          // デイリーグラフの画像が返ってくるので
-                consoleTimeLog("imgB64:");
-                consoleTimeLog(imgB64);
                 $("#daily_light").attr("src", imgB64);  // それを表示する
             }
         consoleTimeLog("LED成功");
